@@ -197,7 +197,7 @@ static void* v2_create_instance(const char *module_dir, const char *config_json)
     }
 
     /* Defaults */
-    inst->channel = 0;        /* Omni */
+    inst->channel = 1;        /* Channel 1 */
     inst->trigger_note = 36;  /* C1 */
     inst->mode = MODE_TRIGGER;
     inst->depth = 1.0f;
@@ -501,7 +501,7 @@ static int v2_get_param(void *instance, const char *key, char *buf, int buf_len)
 
     if (strcmp(key, "chain_params") == 0) {
         const char *params_json = "["
-            "{\"key\":\"channel\",\"name\":\"Channel\",\"type\":\"enum\",\"options\":[\"Omni\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\"],\"default\":\"Omni\"},"
+            "{\"key\":\"channel\",\"name\":\"Channel\",\"type\":\"enum\",\"options\":[\"Omni\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"7\",\"8\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\"],\"default\":\"1\"},"
             "{\"key\":\"trigger_note\",\"name\":\"Trigger\",\"type\":\"int\",\"min\":0,\"max\":127,\"default\":36,\"step\":1},"
             "{\"key\":\"mode\",\"name\":\"Mode\",\"type\":\"enum\",\"options\":[\"Trigger\",\"Gate\"],\"default\":\"Trigger\"},"
             "{\"key\":\"depth\",\"name\":\"Depth\",\"type\":\"float\",\"min\":0,\"max\":1,\"default\":1,\"step\":0.01},"
